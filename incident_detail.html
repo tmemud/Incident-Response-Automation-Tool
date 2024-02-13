@@ -1,0 +1,25 @@
+<!-- incident_detail.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incident Detail</title>
+</head>
+<body>
+    <h1>Incident Detail</h1>
+    <p>Severity: {{ incident.severity }}</p>
+    <p>Description: {{ incident.description }}</p>
+    <h2>Triage Actions</h2>
+    <form action="/triage" method="post">
+        <input type="hidden" name="incident_id" value="{{ incident.id }}">
+        <select name="triage_action">
+            <option value="assign">Assign</option>
+            <option value="close">Close</option>
+            <option value="escalate">Escalate</option>
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
