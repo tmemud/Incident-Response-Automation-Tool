@@ -1,0 +1,20 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incident List</title>
+</head>
+<body>
+    <h1>Incident List</h1>
+    <ul>
+        {% for incident in incidents %}
+        <li>
+            <a href="/incident/{{ incident.id }}">{{ incident.severity }} - {{ incident.description }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
